@@ -29,4 +29,4 @@ app.use('/api/',UsuariosRuta);
 
 //Iniciar Puerto
 app.listen(port);
-console.log("Servidor Proyecto Iniciado Correctamente!");
+console.log("Servidor Sistema de Calificaciones Iniciado Correctamente!");
