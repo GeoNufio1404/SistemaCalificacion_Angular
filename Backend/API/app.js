@@ -1,6 +1,7 @@
 var express = require ('express');
 var bodyParser = require('body-parser');
 var multipart = require('connect-multiparty');
+const UsuariosRuta = require('./Rutas/Usuarios.ruta');
 
 var port = 4000;
 var app = express();
@@ -24,7 +25,7 @@ app.use(function(req,res,next){
 });
 
 //rutas base
-app.use('/api/',UsuariosRoute);
+app.use('/api/',UsuariosRuta);
 
 //Iniciar Puerto
 app.listen(port);
