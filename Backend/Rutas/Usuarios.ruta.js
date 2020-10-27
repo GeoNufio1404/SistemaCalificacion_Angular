@@ -3,7 +3,7 @@ const Usuarios = require('../Modelos/Usuarios.Modelo');
 var UsuariosModelo = require('../Modelos/Usuarios.Modelo');
 var UsuariosRuta = express.Router();
 
-//Listar todos los elementos de una tabla
+//Listar todos los elementos de una tabla http://127.0.0.1:4000/api/usuarios
 UsuariosRuta.get('/usuarios', function(req,res){
    UsuariosModelo.selectAll(function(resultado){
        if ( resultado !== undefined) {

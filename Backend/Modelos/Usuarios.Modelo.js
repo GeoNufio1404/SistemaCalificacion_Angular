@@ -1,7 +1,7 @@
 var db = require('../BaseDeDatos/db.config');
 var Usuarios = {};
 
-//Seleccionar todos
+//Seleccionar todos 
 Usuarios.selectAll = function(callback){
     if (db) {
         var consulta = 'SELECT * FROM Usuarios';
