@@ -1,72 +1,72 @@
 var express = require('express');
 const PensumSistemas = require('../Modelos/PensumSistemas.Modelo');
 var PensumSistemasModelo = require('../Modelos/PensumSistemas.Modelo');
-var PensumSistemasRuta = express.Enrutador();
+var PensumSistemasRuta = express.Router();
 
 // Listar todos los elementos de una tabla
-PensumSistemasRuta.get('/ pensumsistemas', function (req, res) {
+PensumSistemasRuta.get('/pensumsistemas', function (req, res) {
     PensumSistemasModelo.selectAll(function (resultado) {
-        if (resultado! == undefined) {
+        if (resultado !== undefined) {
             res.json(resultado);
-        } más  {
+        } else {
             res.json({ mensaje: 'No hay nada' });
         }
     })
 });
 
 // Listar un elemento especifico
-PensumSistemasRuta.get('/ pensumsistemas /: idCursoPensum', function (req, res) {
+PensumSistemasRuta.get('/pensumsistemas/:idCursoPensum', function (req, res) {
     var id = req.params.idCursoPensum;
     PensumSistemasModelo.selectOne(id, function (resultado) {
-        if (resultado! == undefined) {
+        if (resultado !== undefined) {
             res.json(resultado);
-        } más {
+        } else {
             res.json({ mensaje: 'No hay nada' });
         }
     });
 });
 
 // Crear un nuevo elemento 
-PensumSistemasRuta.post('/ pensumsistemas', function (req, res) {
-    var data = req.el cuerpo;
-    PensumSistemasModelo.crear(datos, función(resultado) {
-        si(m resultado .affectedRows > 0 ) {
-        res.json(resultado);
-    } más  {
-        res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
-    }
-});
-} );
-
-// Reemplazar un nuevo elemento 
-PensumSistemasRuta.put('/ pensumsistemas /: idCursoPensum', function (req, res) {
-    var idCursoPensum = req.params.idCursoPensum;
-    var data = req.el cuerpo;
-
-    if (idCursoPensum == data.idCursoPensum) {
-        PensumSistemasModelo.editar(datos, función(resultado) {
-            si(m resultado .affectedRows > 0 ) {
+PensumSistemasRuta.post('/pensumsistemas', function (req, res) {
+    var data = req.body;
+    PensumSistemasModelo.create(data, function (resultado) {
+        if (resultado.affectedRows > 0) {
             res.json(resultado);
-        } más  {
+        } else {
             res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
         }
-    } );
-    } más {
-    res.json({ 'Mensaje': 'No son el mismo id' });
-}   
-} );
+    });
+});
+
+// Reemplazar un nuevo elemento 
+PensumSistemasRuta.put('/pensumsistemas/:idCursoPensum', function (req, res) {
+    var idCursoPensum = req.params.idCursoPensum;
+    var data = req.body;
+
+    if (idCursoPensum == data.idCursoPensum) {
+        PensumSistemasModelo.edit(data, function (resultado) {
+            if (resultado.affectedRows > 0) {
+                res.json(resultado);
+            } else {
+                res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+            }
+        });
+    } else {
+        res.json({ 'Mensaje': 'No son el mismo id' });
+    }
+});
 
 // Eliminar un elemento
-PensumSistemasRuta.delete('/ pensumsistemas /: idCursoPensum', function (req, res) {
+PensumSistemasRuta.delete('/pensumsistemas/:idCursoPensum', function (req, res) {
     var idCursoPensum = req.params.idCursoPensum;
-    PensumSistemasModelo.eliminar(idCursoPensum, función(resultado) {
-        si(m resultado .affectedRows > 0 ) {
-        res.json(resultado);
-    } más  {
-        res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
-    }
-})
-} );
+    PensumSistemasModelo.delete(idCursoPensum, function (resultado) {
+        if (resultado.affectedRows > 0) {
+            res.json(resultado);
+        } else {
+            res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+        }
+    })
+});
 
 
-módulo.exportaciones = PensumSistemasRuta;
+module.exports = PensumSistemasRuta;
