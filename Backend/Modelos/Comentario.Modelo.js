@@ -2,10 +2,10 @@ var db = require('../BaseDeDatos/db.config');
 var Comentario = {};
 
 //Seleccionar todos 
-Comentario.selectAll = function(callback){
+Comentario.selectAll = function (callback) {
     if (db) {
         var consulta = 'SELECT * FROM Comentario';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -16,10 +16,10 @@ Comentario.selectAll = function(callback){
 }
 
 //Seleccionar uno
-Comentario.selectOne = function(id,callback){
+Comentario.selectOne = function (id, callback) {
     if (db) {
         var consulta = 'SELECT * FROM Comentario where IDComentario = ?';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -30,10 +30,10 @@ Comentario.selectOne = function(id,callback){
 }
 
 //Crear
-Comentario.create = function(data, callback) {
+Comentario.create = function (data, callback) {
     if (db) {
         var consulta = "call sp_AgregarComentario(?,?,?,?)"
-        db.query (consulta,[data.IDComentario,data.Mensaje,data.Publicacion_IDPublicacion,data.Usuario_Carnet],function(error,resultado){
+        db.query(consulta, [data.IDComentario, data.Mensaje, data.Publicacion_IDPublicacion, data.Usuario_Carnet], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -44,10 +44,10 @@ Comentario.create = function(data, callback) {
 }
 
 //Editar
-Comentario.edit = function(data, callback) {
+Comentario.edit = function (data, callback) {
     if (db) {
         var consulta = "call sp_EditarComentario(?,?,?,?)"
-        db.query (consulta,[data.IDComentario,data.Mensaje,data.Publicacion_IDPublicacion,data.Usuario_Carnet],function(error,resultado){
+        db.query(consulta, [data.IDComentario, data.Mensaje, data.Publicacion_IDPublicacion, data.Usuario_Carnet], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Comentario.edit = function(data, callback) {
 }
 
 //Eliminar
-Comentario.delete = function(data, callback) {
+Comentario.delete = function (data, callback) {
     if (db) {
         var consulta = "call sp_EliminarComentario(?)"
-        db.query (consulta,[data.IDComentario],function(error,resultado){
+        db.query(consulta, [data.IDComentario], function (error, resultado) {
             if (error) {
                 throw error;
             } else {

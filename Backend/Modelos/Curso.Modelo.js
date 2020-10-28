@@ -2,10 +2,10 @@ var db = require('../BaseDeDatos/db.config');
 var Curso = {};
 
 //Seleccionar todos 
-Curso.selectAll = function(callback){
+Curso.selectAll = function (callback) {
     if (db) {
         var consulta = 'SELECT * FROM Curso';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -16,10 +16,10 @@ Curso.selectAll = function(callback){
 }
 
 //Seleccionar uno
-Curso.selectOne = function(id,callback){
+Curso.selectOne = function (id, callback) {
     if (db) {
         var consulta = 'SELECT * FROM Curso where CodigoCurso = ?';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -30,10 +30,10 @@ Curso.selectOne = function(id,callback){
 }
 
 //Crear
-Curso.create = function(data, callback) {
+Curso.create = function (data, callback) {
     if (db) {
         var consulta = "call sp_AgregarCurso(?,?)"
-        db.query (consulta,[data.CodigoCurso,data.Nombre],function(error,resultado){
+        db.query(consulta, [data.CodigoCurso, data.Nombre], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -44,10 +44,10 @@ Curso.create = function(data, callback) {
 }
 
 //Editar
-Curso.edit = function(data, callback) {
+Curso.edit = function (data, callback) {
     if (db) {
         var consulta = "call sp_EditarCurso(?,?)"
-        db.query (consulta,[data.CodigoCurso,data.Nombre],function(error,resultado){ 
+        db.query(consulta, [data.CodigoCurso, data.Nombre], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Curso.edit = function(data, callback) {
 }
 
 //Eliminar
-Curso.delete = function(data, callback) {
+Curso.delete = function (data, callback) {
     if (db) {
         var consulta = "call sp_EliminarCurso(?)"
-        db.query (consulta,[data.CodigoCurso],function(error,resultado){
+        db.query(consulta, [data.CodigoCurso], function (error, resultado) {
             if (error) {
                 throw error;
             } else {

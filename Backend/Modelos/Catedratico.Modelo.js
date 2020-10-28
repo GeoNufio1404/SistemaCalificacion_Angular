@@ -2,10 +2,10 @@ var db = require('../BaseDeDatos/db.config');
 var Catedratico = {};
 
 //Seleccionar todos 
-Catedratico.selectAll = function(callback){
+Catedratico.selectAll = function (callback) {
     if (db) {
         var consulta = 'SELECT * FROM Catedratico';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -16,10 +16,10 @@ Catedratico.selectAll = function(callback){
 }
 
 //Seleccionar uno
-Catedratico.selectOne = function(id,callback){
+Catedratico.selectOne = function (id, callback) {
     if (db) {
         var consulta = 'SELECT * FROM Catedratico where NoCatedratico = ?';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -30,10 +30,10 @@ Catedratico.selectOne = function(id,callback){
 }
 
 //Crear
-Catedratico.create = function(data, callback) {
+Catedratico.create = function (data, callback) {
     if (db) {
         var consulta = "call sp_AgregarCatedratico(?,?,?)"
-        db.query (consulta,[data.NoCatedratico,data.Nombres,data.Apellidos],function(error,resultado){
+        db.query(consulta, [data.NoCatedratico, data.Nombres, data.Apellidos], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -44,10 +44,10 @@ Catedratico.create = function(data, callback) {
 }
 
 //Editar
-Catedratico.edit = function(data, callback) {
+Catedratico.edit = function (data, callback) {
     if (db) {
         var consulta = "call sp_EditarCatedratico(?,?,?)"
-        db.query (consulta,[data.NoCatedratico,data.Nombres,data.Apellidos],function(error,resultado){
+        db.query(consulta, [data.NoCatedratico, data.Nombres, data.Apellidos], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Catedratico.edit = function(data, callback) {
 }
 
 //Eliminar
-Catedratico.delete = function(data, callback) {
+Catedratico.delete = function (data, callback) {
     if (db) {
         var consulta = "call sp_EliminarCatedratico(?)"
-        db.query (consulta,[data.NoCatedratico],function(error,resultado){
+        db.query(consulta, [data.NoCatedratico], function (error, resultado) {
             if (error) {
                 throw error;
             } else {

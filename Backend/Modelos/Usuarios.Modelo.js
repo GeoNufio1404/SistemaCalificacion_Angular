@@ -2,10 +2,10 @@ var db = require('../BaseDeDatos/db.config');
 var Usuarios = {};
 
 //Seleccionar todos 
-Usuarios.selectAll = function(callback){
+Usuarios.selectAll = function (callback) {
     if (db) {
         var consulta = 'SELECT * FROM Usuarios';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -16,10 +16,10 @@ Usuarios.selectAll = function(callback){
 }
 
 //Seleccionar uno
-Usuarios.selectOne = function(id,callback){
+Usuarios.selectOne = function (id, callback) {
     if (db) {
         var consulta = 'SELECT * FROM Usuarios where CarnetUsuario = ?';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -30,10 +30,10 @@ Usuarios.selectOne = function(id,callback){
 }
 
 //Crear
-Usuarios.create = function(data, callback) {
+Usuarios.create = function (data, callback) {
     if (db) {
         var consulta = "call sp_AgregarUsuarios(?,?,?,?,?)"
-        db.query (consulta,[data.CarnetUsuario,data.NombreUsuario,data.ApellidosUsuario,data.PassUsuario,data.Correo],function(error,resultado){
+        db.query(consulta, [data.CarnetUsuario, data.NombreUsuario, data.ApellidosUsuario, data.PassUsuario, data.Correo], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -44,10 +44,10 @@ Usuarios.create = function(data, callback) {
 }
 
 //Editar
-Usuarios.edit = function(data, callback) {
+Usuarios.edit = function (data, callback) {
     if (db) {
         var consulta = "call sp_EditarUsuarios(?,?,?,?,?)"
-        db.query (consulta,[data.CarnetUsuario,data.NombreUsuario,data.ApellidosUsuario,data.PassUsuario,data.Correo],function(error,resultado){
+        db.query(consulta, [data.CarnetUsuario, data.NombreUsuario, data.ApellidosUsuario, data.PassUsuario, data.Correo], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Usuarios.edit = function(data, callback) {
 }
 
 //Eliminar
-Usuarios.delete = function(data, callback) {
+Usuarios.delete = function (data, callback) {
     if (db) {
         var consulta = "call sp_EliminarUsuarios(?)"
-        db.query (consulta,[data.CarnetUsuario],function(error,resultado){
+        db.query(consulta, [data.CarnetUsuario], function (error, resultado) {
             if (error) {
                 throw error;
             } else {

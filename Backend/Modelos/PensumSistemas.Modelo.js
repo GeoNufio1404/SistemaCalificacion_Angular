@@ -2,10 +2,10 @@ var db = require('../BaseDeDatos/db.config');
 var PensumSistemas = {};
 
 //Seleccionar todos 
-PensumSistemas.selectAll = function(callback){
+PensumSistemas.selectAll = function (callback) {
     if (db) {
         var consulta = 'SELECT * FROM PensumSistemas';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -16,10 +16,10 @@ PensumSistemas.selectAll = function(callback){
 }
 
 //Seleccionar uno
-PensumSistemas.selectOne = function(id,callback){
+PensumSistemas.selectOne = function (id, callback) {
     if (db) {
         var consulta = 'SELECT * FROM PensumSistemas where idCursoPensum = ?';
-        db.query(consulta, function(error,resultado){
+        db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -30,10 +30,10 @@ PensumSistemas.selectOne = function(id,callback){
 }
 
 //Crear
-PensumSistemas.create = function(data, callback) {
+PensumSistemas.create = function (data, callback) {
     if (db) {
         var consulta = "call sp_AgregarPensumSistemas(?,?,?,?)"
-        db.query (consulta,[data.idCursoPensum,data.Curso_CodigoCurso,data.Creditos,data.Semestre],function(error,resultado){
+        db.query(consulta, [data.idCursoPensum, data.Curso_CodigoCurso, data.Creditos, data.Semestre], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -44,10 +44,10 @@ PensumSistemas.create = function(data, callback) {
 }
 
 //Editar
-PensumSistemas.edit = function(data, callback) {
+PensumSistemas.edit = function (data, callback) {
     if (db) {
         var consulta = "call sp_EditarPensumSistemas(?,?,?,?)"
-        db.query (consulta,[data.idCursoPensum,data.Curso_CodigoCurso,data.Creditos,data.Semestre],function(error,resultado){
+        db.query(consulta, [data.idCursoPensum, data.Curso_CodigoCurso, data.Creditos, data.Semestre], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ PensumSistemas.edit = function(data, callback) {
 }
 
 //Eliminar
-PensumSistemas.delete = function(data, callback) {
+PensumSistemas.delete = function (data, callback) {
     if (db) {
         var consulta = "call sp_EliminarPensumSistemas(?)"
-        db.query (consulta,[data.idCursoPensum],function(error,resultado){
+        db.query(consulta, [data.idCursoPensum], function (error, resultado) {
             if (error) {
                 throw error;
             } else {
