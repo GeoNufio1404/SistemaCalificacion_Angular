@@ -11,5 +11,5 @@ export class RegistroUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  signIp(){}
 }

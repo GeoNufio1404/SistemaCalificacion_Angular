@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  user ={  }
   constructor() { }
 
   ngOnInit(): void {

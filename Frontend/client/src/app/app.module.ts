@@ -7,6 +7,7 @@ import { NavigationComponent } from './componets/navigation/navigation.component
 import { PerfilComponent } from './componets/perfil/perfil.component';
 import { InicioSesionComponent } from './componets/inicio-sesion/inicio-sesion.component';
 import { RegistroUsuarioComponent } from './componets/registro-usuario/registro-usuario.component';
+import { OlvContrComponent } from './componets/olv-contr/olv-contr.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RegistroUsuarioComponent } from './componets/registro-usuario/registro-
     NavigationComponent,
     PerfilComponent,
     InicioSesionComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    OlvContrComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {PerfilComponent} from './componets/perfil/perfil.component'
 import {InicioSesionComponent} from './componets/inicio-sesion/inicio-sesion.component'
 import {RegistroUsuarioComponent} from './componets/registro-usuario/registro-usuario.component'
+import { OlvContrComponent } from "./componets/olv-contr/olv-contr.component";
 const routes: Routes = [
   {
     path: '',//Esto redirecciona cuando ha iniciado la página
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'perfil',//
     component: RegistroUsuarioComponent
+  }
+  ,
+  {
+    path: 'olv-contr',//
+    component: OlvContrComponent
   }
 
 ];

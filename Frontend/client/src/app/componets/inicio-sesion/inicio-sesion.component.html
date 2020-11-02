@@ -7,16 +7,22 @@
             <div class="card-body">
                 <form (submit)="signUp()">
                     <div class="form-group">
-                        <input type="text" [(ngModel)]="user.name" name="email" class="form-control" placeholder="Registro Académico / Correo" required autofocus>
+                        <input type="text" name="email" class="form-control" placeholder="Registro Académico / Correo" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
                     </div>
                     <button class="btn btn-primary btn-block">
                         Iniciar Sesión
                     </button>
                 </form>
             </div>
+            <nav>
+                <ul>
+                    <li><a routerLink="/olv-contr">¿Olvido Contraseña?</a></li>
+                    <li><a routerLink="/registro-usuario">Registro usuario</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
