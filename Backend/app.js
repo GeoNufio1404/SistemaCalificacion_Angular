@@ -1,13 +1,19 @@
 var express = require ('express');
 var bodyParser = require('body-parser');
 var multipart = require('connect-multiparty');
-const UsuariosRuta = require('./Rutas/Usuarios.ruta');
 
 var port = 4000;
 var app = express();
 
 //Cargar Rutas
-
+const UsuariosRuta = require('./Rutas/Usuarios.ruta');
+const CatedraticoRuta = require('./Rutas/Catedratico.ruta');
+const ComentarioRuta = require('./Rutas/Comentario.ruta');
+const CursoCatedraticoRuta = require('./Rutas/Curso_Catedratico.ruta');
+const CursoRuta = require('./Rutas/Curso.ruta');
+const CursosAprobadosRuta = require('./Rutas/CursosAprobados.ruta');
+const PensumSistemasRuta = require('./Rutas/PensumSistemas.ruta');
+const PublicacionRuta = require('./Rutas/Publicacion.ruta');
 
 //middlewares
 app.use(bodyParser.urlencoded({extended:true}));
@@ -26,6 +32,13 @@ app.use(function(req,res,next){
 
 //rutas base
 app.use('/api/',UsuariosRuta);
+app.use('/api/',CatedraticoRuta);
+app.use('/api/',ComentarioRuta);
+app.use('/api/',CursoCatedraticoRuta);
+app.use('/api/',CursoRuta);
+app.use('/api/',CursosAprobadosRuta);
+app.use('/api/',PensumSistemasRuta);
+app.use('/api/',PublicacionRuta);
 
 //Iniciar Puerto
 app.listen(port);
