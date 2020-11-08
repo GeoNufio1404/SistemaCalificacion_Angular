@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./olv-contr.component.css']
 })
 export class OlvContrComponent implements OnInit {
-
+  user={ID:"",email:""}
   constructor() { }
 
   ngOnInit(): void {
+  }
+  ContrOlvidada(){
+    console.log(this.user)
   }
 
 }

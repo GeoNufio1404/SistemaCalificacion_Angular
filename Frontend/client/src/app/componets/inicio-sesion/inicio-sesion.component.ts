@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
+  user = {ID:"",password:""}
   constructor() { }
 
   ngOnInit(): void {
   }
-  signUp() {}
+  signUp() {
+    console.log(this.user)
+  }
 }

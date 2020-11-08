@@ -5,12 +5,12 @@
                 Restablecer Contraseña
             </div>
             <div class="card-body">
-                <form (submit)="signUp()">
+                <form (submit)="ContrOlvidada()">
                     <div class="form-group">
-                        <input type="text" name="User" class="form-control" placeholder="Usuario" required autofocus>
+                        <input type="text" [(ngModel)]="user.ID" name="User" class="form-control" placeholder="Usuario" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        <input type="email" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
                     </div>
                     <button class="btn btn-primary btn-block">
                         Reestablecer Contraseña

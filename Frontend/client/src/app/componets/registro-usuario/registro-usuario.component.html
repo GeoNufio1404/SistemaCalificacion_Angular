@@ -7,19 +7,19 @@
             <div class="card-body">
                 <form (submit)="signIp()">
                     <div class="form-group">
-                        <input type="text" name="Usuario" class="form-control" placeholder="Registro Académico" required autofocus>
+                        <input type="text" [(ngModel)]="userRegistrado.ID" name="Usuario" class="form-control" placeholder="Registro Académico" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Nombre" class="form-control" placeholder="Nombres" required autofocus>
+                        <input type="text" [(ngModel)]="userRegistrado.name" name="Nombre" class="form-control" placeholder="Nombres" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Apellido" class="form-control" placeholder="Apellidos" required autofocus>
+                        <input type="text" [(ngModel)]="userRegistrado.apellidoUser" name="Apellido" class="form-control" placeholder="Apellidos" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+                        <input type="email" [(ngModel)]="userRegistrado.emailUser" name="email" class="form-control" placeholder="Email" required autofocus>
                     </div>
                     <div class="form-group">
-                        <input type="password"  name="password" class="form-control" placeholder="Password" required>
+                        <input type="password" [(ngModel)]="userRegistrado.passwordUser" name="password" class="form-control" placeholder="Password" required>
                     </div>
                     <button class="btn btn-primary btn-block">
                         Registrar
