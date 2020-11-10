@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
+import { HttpClientModule } from "@angular/common/http";// Para conectar con los servicios
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './componets/navigation/navigation.component';
@@ -22,7 +24,8 @@ import { OlvContrComponent } from './componets/olv-contr/olv-contr.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule //Se añade a los demás 
   ],
   providers: [],
   bootstrap: [AppComponent]
