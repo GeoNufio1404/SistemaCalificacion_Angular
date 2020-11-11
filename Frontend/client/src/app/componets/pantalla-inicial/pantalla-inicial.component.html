@@ -37,8 +37,8 @@
                 <form (submit)="signUp()">
                     <div class="form-group">
                         <input type="text" name="busqueda" class="form-control" placeholder="Filtro" required autofocus>
-                        <input type="radio" name="selecfiltro" value="curso"> Curso
-                        <input type="radio" name="selecfiltro" value="catedratico"> Catedratico
+                        <input type="radio" name="selectfiltro" value="curso"> Curso
+                        <input type="radio" name="selectfiltro" value="catedratico"> Catedratico
                         <button class="btn btn-primary btn-block">
                             Buscar
                         </button>
@@ -70,7 +70,6 @@
                            <option value="12">Suse</option> 
                         </select>
                     </div>
-
                 </div>
             </div>
             <div class="card-head">
@@ -88,9 +87,7 @@
                     <input type="text" name="comentarios"><br><br>
                     <input type="submit" onClick="./VerComentarios();" name="verComent" value="Ver Comentarios">
                     <input type="submit" onClick="./VerPerfil();" name="" value="Ver Perfil">
-                    <button onclick="DejarComentario();" id="DejarComentario">Dejar Comentario</button><br>
-                    <br>
-                    <textarea style="display:none;" id="resultado" rows="5" cols="50"></textarea>
+                    <button routerLink="/comentarios" id="DejarComentario">Dejar Comentario</button><br>
                 </div>
 
                 </div>

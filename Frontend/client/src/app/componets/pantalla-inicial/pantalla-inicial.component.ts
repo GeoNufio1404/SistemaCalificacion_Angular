@@ -6,15 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./pantalla-inicial.component.css']
 })
 export class PantallaInicialComponent implements OnInit {
+  names: string[];
 
-  constructor() { }
+  constructor() {
+    this.names=['Catedratico1','Caredratico2'];
+  }
 
   ngOnInit(): void {
   }
   cargarMensaje() {}
 
   function VerComentarios(){
-
+    templateUrl: './comentarios.component.html',
   }
 
   function VerPerfil(){
@@ -27,6 +30,7 @@ export class PantallaInicialComponent implements OnInit {
 
   function DejarComentario(){
     var resultado = document.getElementById('resultado');
+    resultado.value = html;
     resultado.style.display = "block";
   }
 

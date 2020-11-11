@@ -1,0 +1,48 @@
+<head>
+    <style type="text/css">
+        *{
+            margin: 0;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .card-head{
+            margin:20px auto;
+            width: 500px;
+            height: 200px;
+        }
+        .card-body2{
+            margin:20px auto;
+            border: black 2px solid;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-head">
+                PUBLICACIONES<br/ >
+                <div class="card-body2">
+                    Usuario: 
+                    <input type="text" name="usuario"><br><br>
+                    Curso:
+                    <input type="text" name="curso"><br><br>
+                    Catedratico:
+                    <input type="text" name="catedratico"><br><br>
+                    Mensaje:
+                    <input type="text" name="mensaje"><br><br>
+                    Comentarios en esta publicación:
+                    <input type="text" name="comentarios"><br><br>
+                    <input type="submit" onClick="./VerPerfil();" name="" value="Ver Perfil">
+                    <button onclick="DejarComentario();" id="DejarComentario">Dejar Comentario</button><br><br>
+                    <textarea name="mensaje" class="form-control" placeholder="Ingresa su comentario aqui" required autofocus></textarea>
+                    <input type="submit" onClick="./CargarComentario();" name="" value="Comentar">
+                </div>
+                <button (click)="goBack()">Atras</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>

@@ -27,8 +27,15 @@ const routes: Routes = [
   {
     path: 'olv-contr',//
     component: OlvContrComponent
+  },
+  {
+    path: 'pantalla-inicio',//
+    component: PantallaInicialComponent
+  },
+  {
+    path: 'comentario'´,//
+    component: ComentariosComponent
   }
-
 ];
 
 @NgModule({
