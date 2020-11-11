@@ -13,8 +13,21 @@ export class PantallaInicialComponent implements OnInit {
   }
   cargarMensaje() {}
 
+  function VerComentarios(){
+
+  }
+
+  function VerPerfil(){
+
+  }
+
   function Borar(id){
   	document.getElementById(id).style.display = "none";
+  }
+
+  function DejarComentario(){
+    var resultado = document.getElementById('resultado');
+    resultado.style.display = "block";
   }
 
   function verificaRadios(form){

@@ -4,22 +4,28 @@
             margin: 0;
             font-family:Arial, Helvetica, sans-serif;
         }
-        .card-body1{
+        .card-head{
             margin:20px auto;
-            border: black 2px solid;
             width: 500px;
-            height: 50px;
+            height: 200px;
         }
         .card-body{
             margin:20px auto;
             border: black 2px solid;
             width: 500px;
-            height: 200px;
+            height: 50px;
         }
-        .card-head{
+        .card-body1{
             margin:20px auto;
+            border: black 2px solid;
             width: 500px;
-            height: 200px;
+            height: 150px;
+        }
+        .card-body2{
+            margin:20px auto;
+            border: black 2px solid;
+            width: 500px;
+            height: 250px;
         }
     </style>
 </head>
@@ -27,7 +33,7 @@
     <div class="row">
     <div class="col-md-4 mx-auto">
         <div class="card">
-            <div class="card-body1">
+            <div class="card-body">
                 <form (submit)="signUp()">
                     <div class="form-group">
                         <input type="text" name="busqueda" class="form-control" placeholder="Filtro" required autofocus>
@@ -41,7 +47,7 @@
             </div>
             <div class="card-head">
                 CREA TU PULICACIÓN<br/ >
-                <div class="card-body">
+                <div class="card-body1">
                     Tipo de publicación
                     <form >
                         <input type="radio" name="filtropublicacion" value="curso" /> Curso
@@ -69,18 +75,23 @@
             </div>
             <div class="card-head">
                 PUBLICACIONES<br/ >
-                <div class="card-body">
+                <div class="card-body2">
                     Usuario: 
-                    <input type="text" name="usuario">
+                    <input type="text" name="usuario"><br><br>
                     Curso:
-                    <input type="text" name="curso"><br>
+                    <input type="text" name="curso"><br><br>
                     Catedratico:
-                    <input type="text" name="catedratico"><br>
+                    <input type="text" name="catedratico"><br><br>
                     Mensaje:
-                    <input type="text" name="mensaje">
+                    <input type="text" name="mensaje"><br><br>
                     Comentarios en esta publicación:
-                    <input type="submit" name="publicar" value="Publicar">
-                    </div>
+                    <input type="text" name="comentarios"><br><br>
+                    <input type="submit" onClick="./VerComentarios();" name="verComent" value="Ver Comentarios">
+                    <input type="submit" onClick="./VerPerfil();" name="" value="Ver Perfil">
+                    <button onclick="DejarComentario();" id="DejarComentario">Dejar Comentario</button><br>
+                    <br>
+                    <textarea style="display:none;" id="resultado" rows="5" cols="50"></textarea>
+                </div>
 
                 </div>
             </div>
