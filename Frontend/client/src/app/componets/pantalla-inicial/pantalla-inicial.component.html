@@ -1,0 +1,74 @@
+<head>
+    <style type="text/css">
+        *{
+            margin: 0;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .card-body1{
+            margin:20px auto;
+            border: black 2px solid;
+            width: 500px;
+            height: 50px;
+        }
+        .card-body{
+            margin:20px auto;
+            border: black 2px solid;
+            width: 500px;
+            height: 200px;
+        }
+        .card-head{
+            margin:20px auto;
+            width: 500px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-body1">
+                <form (submit)="signUp()">
+                    <div class="form-group">
+                        <input type="text" name="busqueda" class="form-control" placeholder="Filtro" required autofocus>
+                        <input type="radio" name="selecfiltro" value="curso"> Curso
+                        <input type="radio" name="selecfiltro" value="catedratico"> Catedratico
+                        <button class="btn btn-primary btn-block">
+                            Buscar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-head">
+                CREA TU PULICACIÓN<br/ >
+                <div class="card-body">
+                    Tipo de publicación
+                    <form >
+                        <input type="radio" name="filtropublicacion" value="curso" /> Curso
+                        <input type="radio" name="filtropublicacion" value="catedratico" /> Catedratico
+                        <input type="radio" name="filtropublicacion" value="catedraticoconcurso" /> Catedratico en un curso especifico
+                        <input type="submit" onclick="./verificaRadios(value);" name="submit" value="Buscar" />
+                    </form>
+                    <form (submit)="cargarMensaje()">
+                        <textarea name="mensaje" class="form-control" placeholder="Ingresa tu mensaje aqui" required autofocus></textarea>
+                        <input type="submit" name="publicar" value="Publicar">
+                        <input type="reset" onClick="./Borrar();" value="Borra"><br/>
+                    </form>
+                    <div>
+                        <select name="opciones">
+                           <option value="1">Windows Vista</option> 
+                           <option value="2">Windows 7</option> 
+                           <option value="3">Windows XP</option>
+                           <option value="10">Fedora</option> 
+                           <option value="11">Debian</option> 
+                           <option value="12">Suse</option> 
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    </div>
+</body>
