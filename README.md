@@ -3,7 +3,7 @@
 Repositorio:
 https://github.com/GeoNufio1404/SistemaCalificacion_Angular
 
-#Repositorio [Heading link](https://github.com/GeoNufio1404/SistemaCalificacion_Angular)
+
 # Grupo 10
 
 | Nombre | Carnet  |
