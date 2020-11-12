@@ -27,7 +27,7 @@ Curso_CatedraticoRuta.get('/curso_catedratico/:IDCatedraticoCurso', function (re
 });
 
 // Crear un nuevo elemento 
-Curso_CatedraticoRuta.post('/Curso_Catedratico', function (req, res) {
+Curso_CatedraticoRuta.post('/curso_catedratico', function (req, res) {
     var data = req.body;
     Curso_CatedraticoModelo.create(data, function (resultado) {
         if (resultado.affectedRows > 0) {
@@ -39,7 +39,7 @@ Curso_CatedraticoRuta.post('/Curso_Catedratico', function (req, res) {
 });
 
 // Reemplazar un nuevo elemento 
-Curso_CatedraticoRuta.put('/Curso_Catedratico/:IDCatedraticoCurso', function (req, res) {
+Curso_CatedraticoRuta.put('/curso_catedratico/:IDCatedraticoCurso', function (req, res) {
     var IDCatedraticoCurso = req.params.IDCatedraticoCurso;
     var data = req.body;
 
@@ -57,7 +57,7 @@ Curso_CatedraticoRuta.put('/Curso_Catedratico/:IDCatedraticoCurso', function (re
 });
 
 // Eliminar un elemento
-Curso_CatedraticoRuta.delete('/Curso_Catedratico/:IDCatedraticoCurso', function (req, res) {
+Curso_CatedraticoRuta.delete('/curso_catedratico/:IDCatedraticoCurso', function (req, res) {
     var IDCatedraticoCurso = req.params.IDCatedraticoCurso;
     Curso_CatedraticoModelo.delete(IDCatedraticoCurso, function (resultado) {
         if (resultado.affectedRows > 0) {
