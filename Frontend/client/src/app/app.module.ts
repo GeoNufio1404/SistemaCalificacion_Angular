@@ -16,10 +16,10 @@ import { OlvContrComponent } from './componets/olv-contr/olv-contr.component';
   declarations: [
     AppComponent,
     NavigationComponent,
-    PerfilComponent,
     InicioSesionComponent,
     RegistroUsuarioComponent,
-    OlvContrComponent
+    OlvContrComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
