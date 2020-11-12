@@ -73,6 +73,26 @@ create table Comentario(
  
  -------------------- Usuarios --------------------
 
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarUsuarios()
+BEGIN
+    SELECT * FROM Usuarios;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarUsuario(
+    IN _CarnetUsuario INT
+)
+BEGIN
+    SELECT * FROM Usuarios WHERE CarnetUsuario = _CarnetUsuario;
+END $$
+
 --Agregar
 
 DELIMITER
@@ -98,7 +118,7 @@ VALUES(
     _ApellidosUsuario,
     _PassUsuario,
     _Correo
-) ; END $$
+); END $$
 
 -- Editar
 
@@ -137,6 +157,26 @@ WHERE
 END $$
 
 -------------------- Curso --------------------
+
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCursos()
+BEGIN
+    SELECT * FROM Curso;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCurso(
+    IN _CodigoCurso INT
+)
+BEGIN
+    SELECT * FROM Curso WHERE CodigoCurso = _CodigoCurso;
+END $$
 
 --Agregar
 
@@ -187,6 +227,26 @@ WHERE
 END $$
 
 -------------------- PensumSistemas --------------------
+
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarPensumSistemas()
+BEGIN
+    SELECT * FROM PensumSistemas;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCursoPensumSistemas(
+    IN _idCursoPensum INT
+)
+BEGIN
+    SELECT * FROM PensumSistemas WHERE idCursoPensum = _idCursoPensum;
+END $$
 
 --Agregar
 
@@ -248,6 +308,29 @@ END $$
 
 -------------------- CursosAprobados --------------------
 
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCursosAprobados(
+    IN _CarnetU INT
+)
+BEGIN
+    SELECT * FROM CursosAprobados WHERE CarnetU = _CarnetU;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCursoAprobado(
+    IN _CarnetU INT,
+    IN _CursoP INT
+)
+BEGIN
+    SELECT * FROM CursosAprobados WHERE CarnetU = _CarnetU AND CursoP = _CursoP;
+END $$
+
 --Agregar
 
 DELIMITER
@@ -302,6 +385,27 @@ WHERE
 END $$
 
 -------------------- Catedratico --------------------
+
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCatedraticos(
+)
+BEGIN
+    SELECT * FROM Catedratico;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCatedratico(
+    IN _NoCatedratico INT
+)
+BEGIN
+    SELECT * FROM Catedratico WHERE NoCatedratico = _NoCatedratico;
+END $$
 
 --Agregar
 
@@ -358,6 +462,27 @@ END $$
 
 -------------------- Curso_Catedratico --------------------
 
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCursosCatedratico(
+)
+BEGIN
+    SELECT * FROM Curso_Catedratico;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarCursoCatedratico(
+    IN _IDCatedraticoCurso INT
+)
+BEGIN
+    SELECT * FROM Curso_Catedratico WHERE IDCatedraticoCurso = _IDCatedraticoCurso;
+END $$
+
 --Agregar
 
 DELIMITER
@@ -412,6 +537,27 @@ WHERE
 END $$
 
 -------------------- Publicacion --------------------
+
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarPublicaciones(
+)
+BEGIN
+    SELECT * FROM Publicacion;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarPublicacion(
+    IN _IDPublicacion INT
+)
+BEGIN
+    SELECT * FROM Publicacion WHERE IDPublicacion = _IDPublicacion;
+END $$
 
 --Agregar
 
@@ -497,6 +643,27 @@ END $$
 
 
 -------------------- Comentario --------------------
+
+--Listar Todos
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarComentarios(
+)
+BEGIN
+    SELECT * FROM Comentario;
+END $$
+
+--Listar uno
+
+DELIMITER
+    $$
+CREATE PROCEDURE sp_ListarComentario(
+    IN _IDComentario INT
+)
+BEGIN
+    SELECT * FROM Comentario WHERE IDComentario = _IDComentario;
+END $$
 
 --Agregar
 

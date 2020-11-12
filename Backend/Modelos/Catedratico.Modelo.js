@@ -4,7 +4,7 @@ var Catedratico = {};
 //Seleccionar todos 
 Catedratico.selectAll = function (callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Catedratico';
+        var consulta = 'call sp_ListarCatedraticos()';
         db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
@@ -18,8 +18,8 @@ Catedratico.selectAll = function (callback) {
 //Seleccionar uno
 Catedratico.selectOne = function (id, callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Catedratico where NoCatedratico = ?';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarCatedratico(?)';
+        db.query(consulta,id, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Catedratico.edit = function (data, callback) {
 }
 
 //Eliminar
-Catedratico.delete = function (data, callback) {
+Catedratico.delete = function (NoCatedratico, callback) {
     if (db) {
         var consulta = "call sp_EliminarCatedratico(?)"
-        db.query(consulta, [data.NoCatedratico], function (error, resultado) {
+        db.query(consulta, NoCatedratico, function (error, resultado) {
             if (error) {
                 throw error;
             } else {

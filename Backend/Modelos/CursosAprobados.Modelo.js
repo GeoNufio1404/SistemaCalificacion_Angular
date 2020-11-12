@@ -2,10 +2,10 @@ var db = require('../BaseDeDatos/db.config');
 var CursosAprobados = {};
 
 //Seleccionar todos 
-CursosAprobados.selectAll = function (callback) {
+CursosAprobados.selectAll = function (CarneU,callback) {
     if (db) {
-        var consulta = 'SELECT * FROM cursosaprobados';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarCursosAprobados(?)';
+        db.query(consulta,CarneU, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -16,10 +16,10 @@ CursosAprobados.selectAll = function (callback) {
 }
 
 //Seleccionar uno
-CursosAprobados.selectOne = function (id, callback) {
+CursosAprobados.selectOne = function (data, callback) {
     if (db) {
-        var consulta = 'SELECT * FROM cursosaprobados where CarnetU = ?';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarCursoAprobado(?,?)';
+        db.query(consulta,[data.CarneU,data.CursoP], function (error, resultado) {
             if (error) {
                 throw error;
             } else {

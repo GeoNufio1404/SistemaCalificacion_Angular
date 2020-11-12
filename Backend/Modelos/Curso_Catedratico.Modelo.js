@@ -4,7 +4,7 @@ var Curso_Catedratico = {};
 //Seleccionar todos 
 Curso_Catedratico.selectAll = function (callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Curso_Catedratico';
+        var consulta = 'call sp_ListarCursosCatedratico()';
         db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
@@ -18,8 +18,8 @@ Curso_Catedratico.selectAll = function (callback) {
 //Seleccionar uno
 Curso_Catedratico.selectOne = function (id, callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Curso_Catedratico where IDCatedraticoCurso = ?';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarCursoCatedratico(?)';
+        db.query(consulta,id, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Curso_Catedratico.edit = function (data, callback) {
 }
 
 //Eliminar
-Curso_Catedratico.delete = function (data, callback) {
+Curso_Catedratico.delete = function (IDCatedraticoCurso, callback) {
     if (db) {
         var consulta = "call sp_EliminarCurso_Catedratico(?)"
-        db.query(consulta, [data.IDCatedraticoCurso], function (error, resultado) {
+        db.query(consulta, IDCatedraticoCurso, function (error, resultado) {
             if (error) {
                 throw error;
             } else {

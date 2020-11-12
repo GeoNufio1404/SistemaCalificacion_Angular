@@ -4,7 +4,7 @@ var Publicacion = {};
 //Seleccionar todos 
 Publicacion.selectAll = function (callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Publicacion';
+        var consulta = 'call sp_ListarPublicaciones()';
         db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
@@ -18,8 +18,8 @@ Publicacion.selectAll = function (callback) {
 //Seleccionar uno
 Publicacion.selectOne = function (id, callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Publicacion where IDPublicacion = ?';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarPublicacion(?)';
+        db.query(consulta,id, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Publicacion.edit = function (data, callback) {
 }
 
 //Eliminar
-Publicacion.delete = function (data, callback) {
+Publicacion.delete = function (IDPublicacion, callback) {
     if (db) {
         var consulta = "call sp_EliminarPublicacion(?)"
-        db.query(consulta, [data.IDPublicacion], function (error, resultado) {
+        db.query(consulta, IDPublicacion, function (error, resultado) {
             if (error) {
                 throw error;
             } else {

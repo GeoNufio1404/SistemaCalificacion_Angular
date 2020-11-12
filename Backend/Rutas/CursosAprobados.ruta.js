@@ -4,7 +4,7 @@ var CursosAprobadosModelo = require('../Modelos/CursosAprobados.Modelo');
 var CursosAprobadosRuta = express.Router();
 
 //Listar todos los elementos de una tabla 
-CursosAprobadosRuta.get('/cursosaprobados', function (req, res) {
+CursosAprobadosRuta.get('/cursosaprobados/:CarnetU', function (req, res) {
     CursosAprobadosModelo.selectAll(function (resultado) {
         if (resultado !== undefined) {
             res.json(resultado);
@@ -15,9 +15,11 @@ CursosAprobadosRuta.get('/cursosaprobados', function (req, res) {
 });
 
 //Listar un elemento especifico
-CursosAprobadosRuta.get('/cursosaprobados/:CarnetU, :CursoP', function (req, res) {
+CursosAprobadosRuta.get('/cursosaprobados/:CarnetU', function (req, res) {
     var id = req.params.CarnetU;
-    CursosAprobadosModelo.selectOne(id, function (resultado) {
+    var data = req.body;
+    data.CarnetU = id;
+    CursosAprobadosModelo.selectOne(data, function (resultado) {
         if (resultado !== undefined) {
             res.json(resultado);
         } else {

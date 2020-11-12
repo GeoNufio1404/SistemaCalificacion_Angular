@@ -4,7 +4,7 @@ var Curso = {};
 //Seleccionar todos 
 Curso.selectAll = function (callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Curso';
+        var consulta = 'call sp_ListarCursos()';
         db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
@@ -18,8 +18,8 @@ Curso.selectAll = function (callback) {
 //Seleccionar uno
 Curso.selectOne = function (id, callback) {
     if (db) {
-        var consulta = 'SELECT * FROM Curso where CodigoCurso = ?';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarCurso(?)';
+        db.query(consulta,id , function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ Curso.edit = function (data, callback) {
 }
 
 //Eliminar
-Curso.delete = function (data, callback) {
+Curso.delete = function (CodigoCurso, callback) {
     if (db) {
         var consulta = "call sp_EliminarCurso(?)"
-        db.query(consulta, [data.CodigoCurso], function (error, resultado) {
+        db.query(consulta, CodigoCurso, function (error, resultado) {
             if (error) {
                 throw error;
             } else {

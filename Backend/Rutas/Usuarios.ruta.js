@@ -69,10 +69,9 @@ UsuariosRuta.delete('/usuarios/:CarnetUsuario', function (req, res) {
 });
 
 //Login (solo para esta tabla usuarios)
-UsuariosRuta.get('/usuarios/:CarnetUsuario, :PassUsuario', function (req, res) {
-    var CarnetUsuario = req.params.CarnetUsuario;
-    var PassUsuario = req.params.PassUsuario;
-    UsuariosModelo.Validar(CarnetUsuario, PassUsuario, function (resultado) {
+UsuariosRuta.post('/usuarios/login', function (req, res) {
+    var data = req.body;
+    UsuariosModelo.validar(data, function (resultado) {
         if (resultado !== undefined) {
             res.json(resultado);
         } else {

@@ -4,7 +4,7 @@ var PensumSistemas = {};
 //Seleccionar todos 
 PensumSistemas.selectAll = function (callback) {
     if (db) {
-        var consulta = 'SELECT * FROM PensumSistemas';
+        var consulta = 'call sp_ListarPensumSistemas()';
         db.query(consulta, function (error, resultado) {
             if (error) {
                 throw error;
@@ -18,8 +18,8 @@ PensumSistemas.selectAll = function (callback) {
 //Seleccionar uno
 PensumSistemas.selectOne = function (id, callback) {
     if (db) {
-        var consulta = 'SELECT * FROM PensumSistemas where idCursoPensum = ?';
-        db.query(consulta, function (error, resultado) {
+        var consulta = 'call sp_ListarCursoPensumSistemas(?)';
+        db.query(consulta,id, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
@@ -58,10 +58,10 @@ PensumSistemas.edit = function (data, callback) {
 }
 
 //Eliminar
-PensumSistemas.delete = function (data, callback) {
+PensumSistemas.delete = function (idCursoPensum, callback) {
     if (db) {
         var consulta = "call sp_EliminarPensumSistemas(?)"
-        db.query(consulta, [data.idCursoPensum], function (error, resultado) {
+        db.query(consulta, idCursoPensum, function (error, resultado) {
             if (error) {
                 throw error;
             } else {
