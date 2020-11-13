@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-sm"></div>
+    <div class="col-sm-8">
+        <div class="card text-white bg-dark mb-3 sombra">
+          <br><br>
+            <h2 align="center">Iniciar Sesion</h2>
+            <div class="form-group col-12">
+              <label>Usuario</label>
+              <input type="text" class="form-control sombra" placeholder="Usuario">
+            </div>
+            <div class="form-group col-12">
+              <label>Contraseña</label>
+              <input type="Password" class="form-control sombra" placeholder="Contraseña">
+            </div>
+            <div class="text-center">
+              <br>
+              <button type="button" class="btn btn-secondary btn-lg sombra" >Iniciar Sesion</button>
+              <br><br>
+              <!-- Disparador del modulo -->
+              <button type="button" class="btn btn-primary btn-lg sombra" data-toggle="modal" data-target="#myModal">Registrarse</button>
+              <br><br>
+            </div>
+          </div>
+        
+          <!-- Modulo -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+        
+              <!-- Contenido del modulo-->
+              <div class="modal-content ">
+                <div class="modal-header">
+                  <h3 class="modal-title">Registrarse</h3>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-row">
+                      <div class="form-group col-6">
+                        <label>Nombres</label>
+                        <span class="fa fa-user-o" aria-hidden="true"></span><input type="text" class="form-control sombra" placeholder="Nombres">
+                      </div>
+                      <div class="form-group col-6">
+                        <label>Apellidos</label>
+                        <span class="fa fa-user-o" aria-hidden="true"></span><input type="text" class="form-control sombra" placeholder="Apellidos">
+                      </div>
+                      <div class="form-group col-12">
+                        <label>Usuario</label>
+                        <span class="fa fa-at" aria-hidden="true"></span><input type="username" class="form-control sombra" placeholder="Usuario">
+                      </div>
+                      <div class="form-group col-6">
+                        <label>Email</label>
+                        <span class="fa fa-envelope-o" aria-hidden="true"></span><input type="Email" class="form-control sombra" placeholder="Email">
+                      </div>
+                      <div class="form-group col-6">
+                        <label>Contraseña</label>
+                        <span class="fa fa-eye-slash" aria-hidden="true"></span><input type="Password" class="form-control sombra" placeholder="Contraseña">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-success sombra" data-dismiss="modal">Registrarse</button>
+                  <button type="button" class="btn btn-outline-danger sombra" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+        
+            </div>
+          </div>
+    </div>
+    <div class="col-sm"></div>
+</div>

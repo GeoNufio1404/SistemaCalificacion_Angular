@@ -17,13 +17,19 @@ import { CursosAprobadosService } from "../../services/CursosAprobados.service";
 import { PensumSistemasService } from "../../services/PensumSistemas.service";
 import { PublicacionService } from "../../services/Publicacion.service";
 import { UsuariosService } from "../../services/Usuarios.service";
+import { PerfilComponent } from './perfil/perfil.component';
+import { LoginComponent } from './login/login.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PerfilComponent,
+    LoginComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
